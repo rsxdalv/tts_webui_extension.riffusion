@@ -3,7 +3,7 @@ import setuptools
 setuptools.setup(
     name="extension_riffusion",
     packages=setuptools.find_namespace_packages(),
-    version="0.0.1",
+    version="0.0.2",
     author="rsxdalv",
     description="Riffusion allows generating music from text.",
     url="https://github.com/rsxdalv/extension_riffusion",

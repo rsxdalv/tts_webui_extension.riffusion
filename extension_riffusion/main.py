@@ -28,25 +28,13 @@ import torch
 from PIL import Image
 import numpy as np
 
-# from spectro import wav_bytes_from_spectrogram_image
-# from spectro2 import convert as spectro_from_wav
-from extension_riffusion.spectro import wav_bytes_from_spectrogram_image
-from extension_riffusion.spectro2 import convert as spectro_from_wav
-# from extensions.builtin.extension_riffusion.spectro import (
-#     wav_bytes_from_spectrogram_image,
-# )
-# from extensions.builtin.extension_riffusion.spectro2 import convert as spectro_from_wav
-
-from diffusers import StableDiffusionPipeline
-from diffusers import StableDiffusionImg2ImgPipeline
-
 
 def extension__tts_generation_webui():
     riffusion_ui()
     return {
         "package_name": "extension_riffusion",
         "name": "Riffusion",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "requirements": "git+https://github.com/rsxdalv/extension_riffusion@main",
         "description": "Riffusion allows generating music from text.",
         "extension_type": "interface",
@@ -81,6 +69,8 @@ def unload_models():
 
 
 def get_pipe(model_id, device="cuda:0"):
+    from diffusers import StableDiffusionPipeline
+
     global _pipe, _last_model_id
     if _pipe is not None:
         if model_id == _last_model_id:
@@ -94,6 +84,8 @@ def get_pipe(model_id, device="cuda:0"):
 
 
 def get_pipe2(model_id, device="cuda:0"):
+    from diffusers import StableDiffusionImg2ImgPipeline
+
     global _pipe2, _last_model_id
     if _pipe2 is not None:
         if model_id == _last_model_id:
@@ -117,6 +109,8 @@ def predict(prompt, negative_prompt, audio_input, duration, device):
 
 
 def classic(prompt, negative_prompt, duration, device):
+    from extension_riffusion.spectro import wav_bytes_from_spectrogram_image
+
     if duration == 5:
         width_duration = 512
     else:
@@ -133,6 +127,9 @@ def classic(prompt, negative_prompt, duration, device):
 
 
 def style_transfer(prompt, negative_prompt, audio_input, device):
+    from extension_riffusion.spectro2 import convert as spectro_from_wav
+    from extension_riffusion.spectro import wav_bytes_from_spectrogram_image
+
     spec = spectro_from_wav(audio_input)
     print(spec)
     # Open the image
