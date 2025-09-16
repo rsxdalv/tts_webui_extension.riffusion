@@ -1,12 +1,12 @@
 import setuptools
 
 setuptools.setup(
-    name="extension_riffusion",
+    name="tts_webui_extension.riffusion",
     packages=setuptools.find_namespace_packages(),
     version="0.0.2",
     author="rsxdalv",
     description="Riffusion allows generating music from text.",
-    url="https://github.com/rsxdalv/extension_riffusion",
+    url="https://github.com/rsxdalv/tts_webui_extension.riffusion",
     project_urls={},
     scripts=[],
     install_requires=[

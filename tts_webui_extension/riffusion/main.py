@@ -32,18 +32,17 @@ import numpy as np
 def extension__tts_generation_webui():
     riffusion_ui()
     return {
-        "package_name": "extension_riffusion",
+        "package_name": "tts_webui_extension.riffusion",
         "name": "Riffusion",
-        "version": "0.0.2",
-        "requirements": "git+https://github.com/rsxdalv/extension_riffusion@main",
+        "requirements": "git+https://github.com/rsxdalv/tts_webui_extension.riffusion@main",
         "description": "Riffusion allows generating music from text.",
         "extension_type": "interface",
         "extension_class": "audio-music-generation",
         "author": "rsxdalv",
         "extension_author": "rsxdalv",
         "license": "MIT",
-        "website": "https://github.com/rsxdalv/extension_riffusion",
-        "extension_website": "https://github.com/rsxdalv/extension_riffusion",
+        "website": "https://github.com/rsxdalv/tts_webui_extension.riffusion",
+        "extension_website": "https://github.com/rsxdalv/tts_webui_extension.riffusion",
         "extension_platform_version": "0.0.1",
     }
 
