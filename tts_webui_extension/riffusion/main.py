@@ -108,7 +108,7 @@ def predict(prompt, negative_prompt, audio_input, duration, device):
 
 
 def classic(prompt, negative_prompt, duration, device):
-    from extension_riffusion.spectro import wav_bytes_from_spectrogram_image
+    from .spectro import wav_bytes_from_spectrogram_image
 
     if duration == 5:
         width_duration = 512
@@ -126,8 +126,8 @@ def classic(prompt, negative_prompt, duration, device):
 
 
 def style_transfer(prompt, negative_prompt, audio_input, device):
-    from extension_riffusion.spectro2 import convert as spectro_from_wav
-    from extension_riffusion.spectro import wav_bytes_from_spectrogram_image
+    from .spectro2 import convert as spectro_from_wav
+    from .spectro import wav_bytes_from_spectrogram_image
 
     spec = spectro_from_wav(audio_input)
     print(spec)
