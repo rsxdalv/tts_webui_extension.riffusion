@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tts_webui_extension.riffusion"
+version = "0.0.3"
+description = "Riffusion allows generating music from text."
+authors = [
+    {name = "rsxdalv"}
+]
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pydub",
+    "scipy",
+    "diffusers",
+    "transformers",
+    "accelerate",
+]
+
+[project.urls]
+Homepage = "https://github.com/rsxdalv/tts_webui_extension.riffusion"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+# This will find all namespace packages automatically
+namespaces = true
